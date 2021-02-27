@@ -12,8 +12,6 @@ RSpec.describe "PhoneNumbers", type: :request do
       it 'should create and shape a new PhoneNumber entry' do
         post phone_number_create_path, params: { phone_number: { phone_number: '07123 456789' } }
         expect(response).to have_http_status(:success)
-        p response
-        puts response.body
         expect do
           post phone_number_create_path, params: { phone_number: { phone_number: '07123 456789' } }
           expect(PhoneNumber.first.phone_number).to eq('07123456789')
