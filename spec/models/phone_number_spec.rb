@@ -5,9 +5,10 @@ RSpec.describe PhoneNumber, type: :model do
   let(:valid_starting_four_four) { PhoneNumber.new phone_number: '447123 456789' }
   let(:valid_starting_plus_four_four) { PhoneNumber.new phone_number: '+44 7123 456789' }
   let(:valid_no_space) { PhoneNumber.new phone_number: '07123456789' }
+  let(:invalid_prefix) { PhoneNumber.new phone_number: '+7123 456789' }
   let(:invalid_by_count_less) { PhoneNumber.new phone_number: '07123 456' }
   let(:invalid_by_count_more) { PhoneNumber.new phone_number: '07123 456789123' }
-  let(:invalid_by_alpha) { PhoneNumber.new phone_number: '07abc defghi'}
+  let(:invalid_by_alpha) { PhoneNumber.new phone_number: '07abc defghi' }
 
   context 'valid phone numbers' do
     it 'should accept valid number with a zero' do
@@ -42,7 +43,7 @@ RSpec.describe PhoneNumber, type: :model do
       it 'should correctly shape the number for Twilio' do
         number = valid_starting_zero
         number.save
-        expect(number.reload.phone_number).to equal(valid_starting_zero.phone_number.gsub(' ', ''))
+        expect(number.reload.phone_number).to eq(valid_starting_zero.phone_number.gsub(' ', ''))
       end
     end
   end
@@ -52,6 +53,13 @@ RSpec.describe PhoneNumber, type: :model do
       expect do
         number = PhoneNumber.new phone_number: nil
         expect(number.valid?).to be(false)
+      end.to change(PhoneNumber, :count).by(0)
+    end
+
+    it 'should not accept a number with an invalid prefix' do
+      expect do
+        expect(invalid_prefix.valid?).to be(false)
+        invalid_prefix.save
       end.to change(PhoneNumber, :count).by(0)
     end
 
