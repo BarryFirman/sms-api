@@ -1,24 +1,41 @@
-# README
+# Mobile Phone Number Client
+An application that accepts phone numbers in various formats and sotres them.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usage
+POST the Phone Number to:
+`/phone_numnber/create`
 
-Things you may want to cover:
+with the following query format:
+`?phone-number[phone_number]=_numberformat_ `
 
-* Ruby version
+Valid Number Formats are:
+- 07123 456789
+- 44 7123 456789
+- 44 7123 456789
+- 07123456789
+- 447123456789
+- 447123456789
 
-* System dependencies
+## Getting Started
+- Clone the repository
 
-* Configuration
+- Change directory to the root of repository
 
-* Database creation
+### Prerequisites :
 
-* Database initialization
+- [Webpacker](https://github.com/rails/webpacker) : Ensure Webpacker prerequisites and dependencies are installed and configured.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Install Gems:
 
-* Deployment instructions
+`bundle install`
 
-* ...
+### Create and seed database:
+
+`rails db:migrate`
+
+
+## Versions:
+
+- Ruby 2.7.2
+- Rails ~> 6.1.3

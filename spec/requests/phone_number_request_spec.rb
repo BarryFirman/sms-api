@@ -3,11 +3,6 @@ require 'rails_helper'
 RSpec.describe "PhoneNumbers", type: :request do
 
   describe 'POST /create' do
-    # it 'returns http success' do
-    #   get '/phone_number/create'
-    #   expect(response).to have_http_status(:success)
-    # end
-
     context 'valid parameters' do
       it 'should create and shape a new PhoneNumber entry' do
         post phone_number_create_path, params: { phone_number: { phone_number: '07123 456789' } }
