@@ -35,7 +35,8 @@ Valid Number Formats are:
 `rails db:migrate`
 
 # Start server
-A script is provided to start the API server on port 8082. to run the script type:
+
+A script is provided to start the API server on port 8082 to run the script type:
 
 `./starts`
 
