@@ -17,7 +17,13 @@ To make it as close to the project specification as possible I created a separat
 # The Frontend
 The first thing I have to say about the frontend is the HTML code looks awful - sorry. It looks like I tripped over with a bucketful of code and spilled it into an editor.
 
-The validator and input mask basically works but it is very hacky and if you mash the keypad the input mask doesn't work - it's just time that is my enemy here, ideally I would have sorted it before submission. I also wanted to show some workings out rather than finding something to use that would disguise the work, hence far too many _if_ statements.
+The validator and input mask basically works but it is very hacky. I also wanted to show some workings out rather than finding something to use that would disguise the work, hence far too many _if_ statements.
+
+Two known bugs are:
+1.  If you mash the keyboard the input mask doesn't kick in.
+2. You can type as many '+'s you want anywhere in the field.
+
+It's just time that is my enemy here, ideally I would have sorted these out before submission.
 
 The frontend is hard coded to use the API on localhost, port 8082. This can be changed in the PhoneNumber Controller if required.
 
