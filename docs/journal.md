@@ -20,8 +20,8 @@ The first thing I have to say about the frontend is the HTML code looks awful - 
 The validator and input mask basically works but it is very hacky. I also wanted to show some workings out rather than finding something to use that would disguise the work, hence far too many _if_ statements.
 
 Two known bugs are:
-1.  If you mash the keyboard the input mask doesn't kick in.
-2. You can type as many '+'s you want anywhere in the field.
+1. If you mash the keyboard the input mask doesn't kick in.
+2. ~~You can type as many '+'s you want anywhere in the field.~~ - Update: 02/03/2021 - This is now fixed.
 
 It's just time that is my enemy here, ideally I would have sorted these out before submission.
 
